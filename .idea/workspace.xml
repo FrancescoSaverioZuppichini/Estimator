@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cece9030-220f-4c6d-bad6-42c3e2f81c1e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/estimator/BasicLogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/estimator/BasicLogger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/estimator/Estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/estimator/Estimator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/estimator/TensorBoardLogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/estimator/TensorBoardLogger.py" afterDir="false" />
-    </list>
+    <list default="true" id="cece9030-220f-4c6d-bad6-42c3e2f81c1e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,18 +11,19 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/estimator$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1525970697633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/simple" />
+    <SUITE FILE_PATH="coverage/estimator$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1526024109933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/hook" />
     <SUITE FILE_PATH="coverage/estimator$main.coverage" NAME="main Coverage Results" MODIFIED="1525540410909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/estimator$data.coverage" NAME="data Coverage Results" MODIFIED="1522509427964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.51552796">
+    <splitter split-orientation="horizontal" split-proportion="0.630394">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Estimator.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Estimator.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/estimator/Estimator.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="362">
-                  <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
+                <state relative-caret-position="-44">
+                  <caret line="65" selection-start-line="65" selection-end-line="65" />
                   <folding>
                     <element signature="e#0#23#0" expanded="true" />
                   </folding>
@@ -37,8 +34,8 @@
           <file leaf-file-name="BasicLogger.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/estimator/BasicLogger.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="445">
-                  <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+                <state relative-caret-position="420">
+                  <caret line="28" column="45" lean-forward="true" selection-start-line="28" selection-end-line="29" />
                   <folding>
                     <element signature="e#0#23#0" expanded="true" />
                   </folding>
@@ -49,8 +46,20 @@
           <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/examples/simple/main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+                <state relative-caret-position="300">
+                  <caret line="20" column="14" selection-end-line="34" />
+                  <folding>
+                    <element signature="e#0#47#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/examples/hook/main.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="384">
+                  <caret line="29" column="92" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
                   <folding>
                     <element signature="e#0#47#0" expanded="true" />
                   </folding>
@@ -74,7 +83,7 @@
             <entry file="file://$PROJECT_DIR$/estimator/Hook.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="270">
-                  <caret line="18" selection-start-line="18" selection-end-line="18" />
+                  <caret line="18" lean-forward="true" selection-end-line="18" />
                 </state>
               </provider>
             </entry>
@@ -108,7 +117,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/estimator" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -125,8 +134,9 @@
         <option value="$PROJECT_DIR$/estimator/Hook.py" />
         <option value="$PROJECT_DIR$/estimator/TensorBoardLogger.py" />
         <option value="$PROJECT_DIR$/estimator/BasicLogger.py" />
-        <option value="$PROJECT_DIR$/estimator/Estimator.py" />
         <option value="$PROJECT_DIR$/examples/simple/main.py" />
+        <option value="$PROJECT_DIR$/estimator/Estimator.py" />
+        <option value="$PROJECT_DIR$/examples/hook/main.py" />
       </list>
     </option>
   </component>
@@ -177,6 +187,12 @@
               <item name="estimator" type="b2602c69:ProjectViewProjectNode" />
               <item name="estimator" type="462c0819:PsiDirectoryNode" />
               <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="hook" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="estimator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="estimator" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
               <item name="simple" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -191,6 +207,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples/hook" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/estimator" />
     </key>
@@ -207,7 +226,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager" selected="Python.main (2)">
     <configuration name="data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="estimator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -246,6 +265,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="estimator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples/hook" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/hook/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="estimator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -269,9 +307,11 @@
       <item itemvalue="Python.main" />
       <item itemvalue="Python.data" />
       <item itemvalue="Python.main (1)" />
+      <item itemvalue="Python.main (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.data" />
@@ -293,6 +333,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -330,16 +371,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/estimator/TensorBoardLogger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/estimator/TensorBoardLogger.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -528,13 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/estimator/Hook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/complete/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -555,10 +579,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/estimator/Estimator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/estimator/Hook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/estimator/BasicLogger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+        <state relative-caret-position="420">
+          <caret line="28" column="45" lean-forward="true" selection-start-line="28" selection-end-line="29" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -567,20 +608,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/simple/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        <state relative-caret-position="300">
+          <caret line="20" column="14" selection-end-line="34" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/estimator/Estimator.py">
+    <entry file="file://$PROJECT_DIR$/examples/hook/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
+        <state relative-caret-position="384">
+          <caret line="29" column="92" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>

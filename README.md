@@ -107,6 +107,8 @@ The Estimator needs a function that return a dictionary with the operations to r
 * Mode.Predict: defined the operations that will be run when we call the `.predict` method
 * Mode.Eval: defined the operations that will be run when we call the `.eval` method. They are our metrics.
 
+**The model is built one once.**
+
 ### Estimator creation
 
 Create the estimator is super easy
@@ -149,6 +151,77 @@ It will return a dictionary that contains the results of all the operation defin
 ```python
 {'predictions': array([[0.61255413]], dtype=float32)}
 ```
+## Customisation
+
+Hooks can be attach the Estimator in order to decorate it with new functionalities. Each hook must subclass the `Hook` class.
+
+```
+class Hook:
+    def before_build_model(self, estimator):
+        pass
+
+    def after_build_model(self, estimator):
+        pass
+
+    def before_run_epoch(self, estimator, epoch, data, batch_n, tot_res):
+        pass
+
+    def after_run_epoch(self, estimator, epoch, data, batch_n, tot_res):
+        pass
+
+    def before_run_batch(self, estimator, res, i):
+        pass
+
+    def after_run_batch(self, estimator, res, i, tot_res):
+        pass
+```
+
+This class exposes a wide range of function that will be colled by the estimator. For example, a very simple logger can be defined as follow:
+
+```python
+class Logger(Hook):
+
+    def after_run_epoch(self, estimator, epoch, data, batch_n, tot_res):
+        # tot_res is an array with the result for each bach, in this case { 'loss' : [...] }
+        # take the mean of each metric key
+        mean_res = {k: np.mean(tot_res[k]) for k in estimator.metrics[Mode.EVAL].keys()}
+        print(mean_res)
+```
+
+Then it can be passed to the Estimator as argument
+
+```python
+estimator = Estimator(model_builder, input_fn, hooks=[Logger()])
+# we can define a batch size before train, default is one
+estimator.train(data=train_data, epochs=EPOCHS, batch_size=64)
+res = estimator.evaluate(data=test_data)
+pred = estimator.predict(np.array([[2,1]]))
+print(pred)
+```
+The output is:
+
+```python
+...
+{'loss': 0.08635884}
+{'loss': 0.084242225}
+{'loss': 0.08413396}
+{'loss': 0.082261935}
+{'loss': 0.08626987}
+{'loss': 0.08318842}
+{'loss': 0.08242814}
+{'loss': 0.08449897}
+{'loss': 0.08369716}
+{'loss': 0.0927686}
+{'predictions': array([[0.45650724]], dtype=float32)}
+```
+
+A full example can be found in `example/hook/main.py`
+
+
+
+
+## Saving and Restoring
+TODO
 
 ## TODO
 * Explain how Hooks work

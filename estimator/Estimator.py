@@ -63,6 +63,7 @@ class Estimator:
                 hook.after_build_model(self)
 
         self.built = True
+
     @property
     def operations(self):
         ops = self.metrics[self.mode]
