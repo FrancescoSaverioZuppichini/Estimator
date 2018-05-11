@@ -23,7 +23,7 @@ from estimator.Estimator import Estimator
 ```
 
 ### Motivation
-TensorFlow provides an [Estimator](METTI LINK) implementation that is more than a black box that a library. It cannot be easily extended and customise for this reasons I decided to implemented my owm.
+TensorFlow provides an [Estimator](https://www.tensorflow.org/programmers_guide/estimators) implementation that is more than a black box that a library. It cannot be easily extended and customise for this reasons I decided to implemented my owm.
 
 ### Example
 
