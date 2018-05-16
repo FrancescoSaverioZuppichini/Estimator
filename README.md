@@ -1,5 +1,5 @@
 # Estimator
-## A predicatable way to train your deep learning model
+## A predictable way to train your deep learning model
 
 Training deep learning model in tensorflow should be easy and fast. This library introduce a predictable object oriented approach to archieve booth simplicity and granulatiry while preserving customisation.
 
