@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website for testing",
+    "tagline": "A predicatable way to train your deep learning model",
     "doc1": "Latin-ish",
     "Example Page": "Example Page",
     "doc2": "document number 2",
@@ -11,14 +11,15 @@
     "example": "Example",
     "doc4": "Other Document",
     "doc5": "Fifth Document",
+    "hooks": "Hooks",
     "installation": "Installation",
     "intro": "Introduction",
+    "overview": "Overview",
     "Docs": "Docs",
     "API": "API",
     "Help": "Help",
     "Getting Started": "Getting Started",
-    "First Category": "First Category",
-    "Second Category": "Second Category"
+    "First Category": "First Category"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
