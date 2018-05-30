@@ -138,6 +138,15 @@ It will return a dictionary that contains the results of all the operation defin
 {'loss': [0.08878718]}
 ```
 
+### Train and Evaluate
+
+You can  train and evaluate by calling
+
+```python
+estimator.train_and_evaluate(data=train_data, epoches=10, validation=val_data, batch_size=64, batch_size_eval=32)
+
+```
+
 ### Predict
 To predict, call the `.predict` method with an input. 
 

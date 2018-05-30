@@ -13,7 +13,7 @@ class Saver(Hook):
 
     def after_run_epoch(self, estimator, epoch, data, batch_size, tot_res):
         if estimator.mode == Mode.TRAIN:
-            self.path = self.saver.save(estimator.sess, self.save_dir + '/' + estimator.name + '.ckpt', global_step=epoch)
+            self.path = self.saver.save(estimator.sess, self.save_dir + '/' + estimator.name + '.ckpt', global_step=estimator.train_steps)
             print('Saved mode in {}'.format(self.path))
 
     def restore(self, sess, path):

@@ -8,6 +8,7 @@ class BasicLogger(Hook):
     def __init__(self):
         self.pbar = None
         self.n_digits = 0
+        self.epoch = 0
 
     def before_run_epoch(self, estimator, epoch, data, batch_size, tot_res):
         n_batches = data[0].shape[0] // batch_size
@@ -28,10 +29,11 @@ class BasicLogger(Hook):
     def after_run_batch(self, estimator, res, i,  tot_res):
         mean_res = {k: np.mean(tot_res[k]) for k in estimator.metrics[Mode.EVAL].keys()}
         # print(mean_res)
-        self.pbar.set_description("Current: " + self.format(estimator,res, i) + ' AVG: ' + self.format(estimator,mean_res, i))
+        self.pbar.set_description("Epoch: " + str(self.epoch) + " Current: " + self.format(estimator,res, i) + ' AVG: ' + self.format(estimator,mean_res, i))
         self.pbar.update(1)
 
     def after_run_epoch(self, estimator, epoch, data, batch_size, tot_res):
+        self.epoch = epoch
     #     mean_tot_res = {k: np.mean(tot_res[k]) for k in estimator.metrics[Mode.EVAL].keys()}
     #     print("AVG Epoch {}: {}".format(epoch,self.format(estimator, mean_tot_res, epoch)))
         self.pbar.close()

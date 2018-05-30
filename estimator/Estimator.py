@@ -38,7 +38,8 @@ class Estimator:
         self.data_sets, self.x_, self.y_ = input_fn(self.batch_size)
         self.x, self.y = self.make_iter()
 
-        self.hooks = hooks
+        self.hooks = hooks if hooks else []
+
         if not restore:
             self.build_model(self.x, self.y)
         if not restore:
@@ -99,7 +100,6 @@ class Estimator:
                     hook.after_run_batch(self, res, i, tot_res)
 
                 i += 1
-                self.train_steps += 1
 
         for hook in self.hooks:
             hook.after_run_epoch(self, epoch, data, batch_size, tot_res)
@@ -118,12 +118,15 @@ class Estimator:
 
         for epoch in range(epochs):
             self.run_epoch(self.sess, epoch, data, batch_size, n_batches)
+            self.train_steps += 1
 
-    def train_and_evaluate(self, epochs, data, validation, batch_size, batch_size_eval=None):
-        # todo add param to specify every epoch to evaluate
+    def train_and_evaluate(self, epochs, data, validation, batch_size, batch_size_eval=None, every=1):
+        # Todo add param to specify every epoch to evaluate
         for epoch in range(epochs):
             self.train(epochs=1, data = data, batch_size=batch_size)
-            self.evaluate(data=validation, batch_size=batch_size_eval)
+            should_eval = (epoch + 1) % every == 0
+            if should_eval:
+                self.evaluate(data=validation, batch_size=batch_size_eval)
 
     def evaluate(self, data, batch_size=None):
         self.mode = Mode.EVAL
