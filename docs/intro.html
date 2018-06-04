@@ -66,7 +66,7 @@ test_data = (np.random.rand(<span class="hljs-number">100</span>,<span class="hl
 <pre><code class="hljs css python">input_fn = Estimator.create_input_fn(input_shape=[<span class="hljs-keyword">None</span>,<span class="hljs-number">2</span>],output_shape=[<span class="hljs-keyword">None</span>,<span class="hljs-number">1</span>])
 </code></pre>
 <p>You must manually specify the shapes since, internally, the Estimator will create a generic iterator that will switch between the train Dataset and the eval Dataset.
-You must pass <code>None</code> as the first dimension since it will be for batching.</p>
+You must pass <code>None</code> as the first dimension since the first dimension is used later for batching.</p>
 <h3><a class="anchor" aria-hidden="true" id="model-creation"></a><a href="#model-creation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Model creation</h3>
 <pre><code class="hljs css python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">model_builder</span><span class="hljs-params">(x, y, config)</span>:</span>
     <span class="hljs-comment"># config is a dictionary that can be passed to the estimator</span>
@@ -88,7 +88,7 @@ You must pass <code>None</code> as the first dimension since it will be for batc
 <li>Mode.Predict: defines the operations that will be run when we call the <code>.predict</code> method</li>
 <li>Mode.Eval: defines the operations that will be run when we call the <code>.eval</code> method. These are your metrics. For example, accuracy</li>
 </ul>
-<p><strong>The model is built one once.</strong></p>
+<p><strong>The model is built only once.</strong></p>
 <h3><a class="anchor" aria-hidden="true" id="estimator-creation"></a><a href="#estimator-creation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Estimator creation</h3>
 <p>Create an estimator is super easy</p>
 <pre><code class="hljs css python">estimator = Estimator(model_builder, input_fn)
