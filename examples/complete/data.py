@@ -1,7 +1,6 @@
-import tensorflow as tf
 import numpy as np
-from estimator.Estimator import Mode
-from estimator.Estimator import Estimator
+from estimator.estimator.Estimator import Mode
+from estimator.estimator.Estimator import Estimator
 
 # train, test = tf.keras.datasets.mnist.load_data()
 

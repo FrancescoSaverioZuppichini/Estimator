@@ -1,5 +1,5 @@
 import tensorflow as tf
-from estimator.Estimator import Mode
+from estimator.estimator.Estimator import Mode
 
 def model_builder(x, y, config):
 

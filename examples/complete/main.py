@@ -1,10 +1,9 @@
 from examples.complete.data import input_fn
 from examples.complete.data import data
 from examples.complete.model import model_builder
-from estimator.Estimator import Estimator
-from estimator.Estimator import Mode
-from estimator.TensorBoardLogger import TensorBoardLogger
-from estimator.BasicLogger import BasicLogger
+from estimator.estimator.Estimator import Estimator
+from estimator.estimator.Estimator import Mode
+from estimator.estimator.BasicLogger import BasicLogger
 
 import numpy as np
 

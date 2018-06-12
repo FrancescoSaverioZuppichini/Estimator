@@ -3,12 +3,11 @@ id: intro
 title: Introduction    
 ---
 # Estimator
-## A predicatable way to train your deep learning model
+## A predictable way to train your deep learning model
 
-Training deep learning model in tensorflow should be easy and fast. This library introduce a predictable object oriented approach to archieve booth simplicity and granulatiry while preserving customisation.
+Training deep learning model in tensorflow should be easy and fast. This library introduces a predictable object-oriented approach to achieve booth simplicity and granularity while preserving customization.
 
-The aim of this library is to allows the developer to just define a model and an input pipeline in order to train, evaluate and test their model without writing any train loop and reinvent the wheel everytime.
-
+The aim of this library is to allows the developer to just define a model and an input pipeline in order to train, evaluate and test their model without writing any train loop and reinvent the wheel every time.
 
 ### Installation
 
@@ -27,11 +26,10 @@ from estimator.Estimator import Estimator
 ```
 
 ### Motivation
-TensorFlow provides an [Estimator](https://www.tensorflow.org/programmers_guide/estimators) implementation that is more than a black box that a library. It cannot be easily extended and customise for this reasons I decided to implemented my owm.
-
+TensorFlow provides an [Estimator](https://www.tensorflow.org/programmers_guide/estimators) implementation that is more a black box than a library. It cannot be easily extended and customize for this reasons I decided to implement my own.
 ### Example
 
-It follows a very simple example that will use some random data and a basic feed forward network
+It follows a very simple example in which we create a basic feed forward neural network and we train it with random numbers
 
 ```python
 from estimator.Estimator import Estimator, Mode
@@ -84,8 +82,8 @@ Then we define an `input_fn` by calling an utily function from the `Estimator` c
 ```python
 input_fn = Estimator.create_input_fn(input_shape=[None,2],output_shape=[None,1])
 ```
-You must manually specify the shapes since, internally, the instimator will create a generic iterator that will switch between the train Dataset and the eval Dataset. 
-You must pass `None` as first dimension since it will be for batching.
+You must manually specify the shapes since, internally, the Estimator will create a generic iterator that will switch between the train Dataset and the eval Dataset. 
+You must pass `None` as the first dimension since the first dimension is used later for batching.
 
 
 ### Model creation
@@ -105,17 +103,17 @@ def model_builder(x, y, config):
             Mode.EVAL: { 'loss': loss } # used as metrics
     }
 ```
-The Estimator needs a function that return a dictionary with the operations to run for each mode. The modes are three:
+The Estimator needs a function that returns a dictionary with the operations to run for each mode. The modes are three:
 
-* Mode.Train: defined the operations that will be run when we call the `.train` method
-* Mode.Predict: defined the operations that will be run when we call the `.predict` method
-* Mode.Eval: defined the operations that will be run when we call the `.eval` method. They are our metrics.
+* Mode.Train: defines the operations that will be run when we call the `.train` method
+* Mode.Predict: defines the operations that will be run when we call the `.predict` method
+* Mode.Eval: defines the operations that will be run when we call the `.eval` method. These are your metrics. For example, accuracy
 
-**The model is built one once.**
+**The model is built only once.**
 
 ### Estimator creation
 
-Create the estimator is super easy
+Create an estimator is super easy
 
 ```python
 estimator = Estimator(model_builder, input_fn)
@@ -131,7 +129,7 @@ estimator.train(data=train_data, epochs=EPOCHS, batch_size=64)
 
 ### Evaluate
 
-To evaluate, similar to before, call the `.evaluate` method. You can also pass a batch size, the **default is the size of the data input**
+To evaluate, call the `.evaluate` method. You can also pass a batch size, the **default is the size of the data input**
 
 ```python
 res = estimator.evaluate(data=test_data)
@@ -140,6 +138,15 @@ It will return a dictionary that contains the results of all the operation defin
 
 ```
 {'loss': [0.08878718]}
+```
+
+### Train and Evaluate
+
+You can train and evaluate by calling
+
+```python
+estimator.train_and_evaluate(data=train_data, epoches=10, validation=val_data, batch_size=64, batch_size_eval=32, every=2)
+
 ```
 
 ### Predict
@@ -220,13 +227,3 @@ The output is:
 ```
 
 A full example can be found in `example/hook/main.py`
-
-
-
-
-## Saving and Restoring
-TODO
-
-## TODO
-* Explain how Hooks work
-* Write doc

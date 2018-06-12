@@ -1,6 +1,8 @@
-from estimator.Estimator import Estimator, Mode
-from estimator.Hook import Hook
-from estimator.Saver import Saver
+from estimator.estimator.Estimator import Estimator, Mode
+from estimator.estimator.Hook import Hook
+from estimator.estimator.TensorBoardLogger import TensorBoardLogger
+from estimator.estimator.Saver import Saver
+
 import numpy as np
 import tensorflow as tf
 
@@ -34,10 +36,10 @@ class Logger(Hook):
         print(mean_res)
 
 
-estimator = Estimator(model_builder, input_fn, hooks=[Logger(), Saver('./save')])
+estimator = Estimator(model_builder, input_fn, hooks=[Logger(), TensorBoardLogger()])
 # we can define a batch size before train, default is one
-estimator.train(data=train_data, epochs=EPOCHS, batch_size=64)
-# estimator.train_and_evaluate(data=train_data, epochs=EPOCHS, batch_size=64, validation=test_data, batch_size_eval=64)
+# estimator.train(data=train_data, epochs=EPOCHS, batch_size=64)
+estimator.train_and_evaluate(data=train_data, epochs=EPOCHS, batch_size=64, validation=test_data, batch_size_eval=64)
 
 res = estimator.evaluate(data=test_data)
 pred = estimator.predict(np.array([[2,1]]))

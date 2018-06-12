@@ -1,10 +1,12 @@
-from estimator.estimator.Estimator import Estimator, Mode
-import numpy as np
-import tensorflow as tf
+from unittest import TestCase
+from estimator.estimator.Estimator import Mode, Estimator
+from estimator.estimator.EarlyStopping import EarlyStopping
+from estimator.estimator.BasicLogger import BasicLogger
 
-EPOCHS = 100
-# create the dataset
-train_data = (np.random.rand(1000,2),np.random.rand(1000,1))
+import tensorflow as tf
+import numpy as np
+
+train_data = (np.random.rand(100,2),np.random.rand(100,1))
 test_data = (np.random.rand(100,2),np.random.rand(100,1))
 # define the input function
 input_fn = Estimator.create_input_fn(input_shape=[None,2],output_shape=[None,1])
@@ -23,12 +25,11 @@ def model_builder(x, y, config):
             Mode.EVAL: { 'loss': loss } # used as metrics
     }
 
+class EarlyStoppingTest(TestCase):
 
-estimator = Estimator(model_builder, input_fn)
-# we can define a batch size before train, default is one
-estimator.train(data=train_data, epochs=EPOCHS, batch_size=64)
-res = estimator.evaluate(data=test_data)
+    def setUp(self):
+        self.early_stpping = EarlyStopping('loss',after=10)
+        self.estimator = Estimator(model_builder=model_builder, input_fn=input_fn, hooks=[BasicLogger(), self.early_stpping])
 
-print(res)
-pred = estimator.predict(np.array([[2,1]]))
-print(pred)
+    def test(self):
+        self.estimator.train_and_evaluate(1000,  data=train_data, validation=test_data, batch_size=32, batch_size_eval=32)
