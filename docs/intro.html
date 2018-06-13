@@ -138,11 +138,11 @@ print(pred)
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">after_run_batch</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, estimator, res, i, tot_res)</span></span>:
         pass
 </code></pre>
-<p>This class exposes a wide range of function that will be colled by the estimator. For example, a very simple logger can be defined as follow:</p>
+<p>This class exposes a wide range of function that will be called by the estimator. For example, a very simple logger can be defined as follow:</p>
 <pre><code class="hljs css python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Logger</span><span class="hljs-params">(Hook)</span>:</span>
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">after_run_epoch</span><span class="hljs-params">(self, estimator, epoch, data, batch_n, tot_res)</span>:</span>
-        <span class="hljs-comment"># tot_res is an array with the result for each bach, in this case { 'loss' : [...] }</span>
+        <span class="hljs-comment"># tot_res is an array with the result for each batch, in this case { 'loss' : [...] }</span>
         <span class="hljs-comment"># take the mean of each metric key</span>
         mean_res = {k: np.mean(tot_res[k]) <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> estimator.metrics[Mode.EVAL].keys()}
         print(mean_res)
