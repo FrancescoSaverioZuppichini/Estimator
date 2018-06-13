@@ -21,8 +21,8 @@ class EstimatorConfig:
         pass
 
 class Estimator:
-    def __init__(self, model_builder, input_fn, config=None, hooks=None, restore=False, name='model', graph=None, sess_config=None):
-        self.model_builder = model_builder
+    def __init__(self, model_fn, input_fn, config=None, hooks=None, restore=False, name='model', graph=None, sess_config=None):
+        self.model_fn = model_fn
         self.input_fn = input_fn
         self.config = config
         self.name = name
@@ -52,7 +52,7 @@ class Estimator:
 
     def build_model(self, x, y):
         if not self.built:
-            self.metrics = self.model_builder(x, y, self.config)
+            self.metrics = self.model_fn(x, y, self.config)
 
             for hook in self.hooks:
                 hook.after_build_model(self)

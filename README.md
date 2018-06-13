@@ -7,13 +7,15 @@ The aim of this library is to allows the developer to just define a model and an
 
 ### Installation
 
-The package is available on pip:
+** At the moment the package is NOT available on pip **
+<!-- The package is available on pip: -->
+You can clone the repo and install it directly from it
 
 ```
-pip install TODO
+git clone THIS_REPO
+cd THIS_REPO/estimator
+pip install .
 ```
-
-or you can clone this directory and manually place the `estimator` folder in your project.
 
 Then it can be imported in your script
 
@@ -24,6 +26,7 @@ from estimator.Estimator import Estimator
 ### Motivation
 TensorFlow provides an [Estimator](https://www.tensorflow.org/programmers_guide/estimators) implementation that is more a black box than a library. It cannot be easily extended and customize for this reasons I decided to implement my own.
 ### Example
+You can also check out the this [notebook]().
 
 It follows a very simple example in which we create a basic feed forward neural network and we train it with random numbers
 
@@ -80,7 +83,6 @@ input_fn = Estimator.create_input_fn(input_shape=[None,2],output_shape=[None,1])
 ```
 You must manually specify the shapes since, internally, the Estimator will create a generic iterator that will switch between the train Dataset and the eval Dataset. 
 You must pass `None` as the first dimension since the first dimension is used later for batching.
-
 
 ### Model creation
 
