@@ -59,11 +59,14 @@ class Estimator:
 
         self.built = True
 
+    def get_operations(self, mode):
+        return self.metrics[mode]
+
     @property
     def operations(self):
-        ops = self.metrics[self.mode]
+        ops = self.get_operations(self.mode)
         if self.mode == Mode.TRAIN:
-            ops = { **ops, **self.metrics[Mode.EVAL]} # add eval to train
+            ops = { **ops, **self.get_operations(Mode.EVAL)} # add eval to train
 
         return ops
     @property

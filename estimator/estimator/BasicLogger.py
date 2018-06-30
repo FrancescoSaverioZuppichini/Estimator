@@ -21,12 +21,12 @@ class BasicLogger(Hook):
         self.pbar = tqdm(range(n_batches))
 
     def format(self, estimator, res, i):
-        eval_res = {k: res[k] for k in estimator.metrics[Mode.EVAL].keys()}
+        eval_res = {k: res[k] for k in estimator.get_operations(Mode.EVAL).keys()}
 
         return " ".join(["{}={:.4f}".format(k,v) for k,v in eval_res.items()])
 
     def after_run_batch(self, estimator, res, i,  tot_res):
-        mean_res = {k: np.mean(tot_res[k]) for k in estimator.metrics[Mode.EVAL].keys()}
+        mean_res = {k: np.mean(tot_res[k]) for k in estimator.get_operations(Mode.EVAL).keys()}
         # print(mean_res)
         self.pbar.set_description("Epoch: " + str(self.epoch) + " Current: " + self.format(estimator,res, i) + ' AVG: ' + self.format(estimator,mean_res, i))
         self.pbar.update(1)
